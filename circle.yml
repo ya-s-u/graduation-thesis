@@ -12,6 +12,6 @@ dependencies:
 test:
   override:
     - cd ~/docker-latex
-    - ./build.sh example ./tex_src
+    - sudo ./build.sh main ./
   post:
-    - docker cp tex:/data/main.pdf $CIRCLE_ARTIFACTS/
+    - docker cp ./data/main.pdf $CIRCLE_ARTIFACTS/
