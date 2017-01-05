@@ -1,21 +1,24 @@
 \documentclass[a4j,12pt,twoside]{jreport}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% パッケージ宣言
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{graphicx}
 \usepackage{times}
 \usepackage{selectp}
 \usepackage{epsf}
-\usepackage{style/epsbox}
-\usepackage{style/mediabb}
-%\usepackage{style/boites_exemples}
-\usepackage{style/verbatimfiles}
+\usepackage{styles/epsbox}
+\usepackage{styles/mediabb}
+%\usepackage{styles/boites_exemples}
+\usepackage{styles/verbatimfiles}
 \usepackage{here}
-%\usepackage{url}
+\usepackage{url}
 \usepackage{fancyhdr}
 \usepackage{fancyvrb}
-\usepackage{style/algorithm}%%アルゴリズムのスタイル
-\usepackage{style/algorithmic}%%アルゴリズムのスタイル
+\usepackage{styles/algorithm}
+\usepackage{styles/algorithmic}
 \usepackage{cite}
-\usepackage[dvipdfmx, usenames]{color}%%表の色付け
+\usepackage[dvipdfmx, usenames]{color}
 \usepackage{colortbl}
 
 \usepackage{ascmac}
@@ -24,15 +27,14 @@
 \usepackage{amssymb}
 \usepackage{latexsym}
 
-\usepackage{url}
+\usepackage{styles/thesis}
 
-%% 修論のスタイルファイル
-\usepackage{style/thesis}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% マクロ定義
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\argmax}{\mathop{\rm argmax}}
 \newcommand{\argmin}{\mathop{\rm argmin}}
 \renewcommand{\bibname}{参考文献}
-
 
 %% myマクロ
 %\input{mymacros}
@@ -41,8 +43,9 @@
 %\oddsidemargin=17mm
 %\evensidemargin=-4mm
 
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 本文開始
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \newtheorem{defi}{Definition}[section]
 \newtheorem{thy}{Theorem}[section]
@@ -51,87 +54,75 @@
 
 %\pagenumbering{roman}
 
-%% タイトルページ
-% \include{part/_title/title}
-%% タイトルページ
-% タイトル用パラメータ
+% タイトルページ
 \newlength{\oldtextwidth}
 \setlength{\oldtextwidth}{\textwidth}
 \setlength{\textwidth}{40zw}
-\include{part/_title/title}
-\cleardoublepage
 
+\include{components/_title/main}
+\cleardoublepage
 
 % タイトル以降用パラメータ
 \setlength{\oddsidemargin}{17mm}
 \setlength{\evensidemargin}{-4mm}
 \setlength{\textwidth}{\oldtextwidth}
 
-
 \cleardoublepage
 
-\pagenumbering{arabic}%ここからページ数開始
+%ここからページ数開始
+\pagenumbering{arabic}
 
-\include{part/cover}
-%\cleardoublepage
-
-%% アブストラクト
+% アブストラクト
 \cleardoublepage
 %\pagenumbering{roman}
-\include{part/00.Abstract/abstract}
+\include{components/00.Abstract/main}
 % \include{part/00.Abstract/abstract-e}
 \cleardoublepage
 
-%% 目次
-\include{part/_contents/contents}
+% 目次
+\include{components/_contents/main}
 \cleardoublepage
 
-%% 序章
-%
-\include{part/01.Introduction/chapter1}
+% 序章
+\include{components/01.Introduction/main}
 \cleardoublepage
 
 % 関連研究
-\include{part/02.Relatedworks/chapter2}
+\include{components/02.RelatedWorks/main}
 \cleardoublepage
 
-%% 期間毎の特徴語抽出手法
-\include{part/03./chapter3}
+% 期間毎の特徴語抽出手法
+\include{components/03.Interface/main}
 \cleardoublepage
 
-% タイムスケールを考慮した時系列的話題追跡 
-\include{part/04./chapter4}
+% タイムスケールを考慮した時系列的話題追跡
+\include{components/04.LOD/main}
 \cleardoublepage
 
-%% ツイートの探索的閲覧支援システムの実装
-\include{part/05./chapter5}
+% ツイートの探索的閲覧支援システムの実装
+\include{components/05.Recommendation/main}
 \cleardoublepage
 
-%% 評価・考察 
-\include{part/06.Evaluation/chapter6}
+% 評価・考察
+\include{components/06.Evaluation/main}
 \cleardoublepage
 
-%% まとめ 
-\include{part/07.Conclusion/chapter7}
+% まとめ
+\include{components/07.Conclusion/main}
 \cleardoublepage
 
-% %% 謝辞
-\include{part/08.Acknowledgement/acknowledgement}
+% 謝辞
+\include{components/08.Acknowledgement/main}
 \cleardoublepage
 
-%% 参考文献
-\include{part/09.Bibliography/reference}
+% 参考文献
+\include{components/09.Bibliography/main}
 \cleardoublepage
-
-% 研究成果
-% \include{part/10.Outcome/outcome}
-% \cleardoublepage
 
 \appendix
-\include{part/A.IPSJrengou2014/chap}
-\include{part/B.IPSJ2015/chap}
+\include{components/10.Appendix/IPSJ/main}
 
 \cleardoublepage
-\include{part/_title/title}
+\include{components/_title/main}
 
 \end{document}
