@@ -58,7 +58,8 @@
 \newlength{\oldtextwidth}
 \setlength{\oldtextwidth}{\textwidth}
 \setlength{\textwidth}{40zw}
-\include{part/_title/title}
+
+\include{component/_title/main}
 \cleardoublepage
 
 % タイトル以降用パラメータ
@@ -71,17 +72,15 @@
 %ここからページ数開始
 \pagenumbering{arabic}
 
-\include{part/cover}
-
 % アブストラクト
 \cleardoublepage
 %\pagenumbering{roman}
-\include{part/00.Abstract/abstract}
+\include{component/00.Abstract/main}
 % \include{part/00.Abstract/abstract-e}
 \cleardoublepage
 
 % 目次
-\include{part/_contents/contents}
+\include{component/_contents/main}
 \cleardoublepage
 
 % 序章
@@ -125,6 +124,6 @@
 \include{part/B.IPSJ2015/chap}
 
 \cleardoublepage
-\include{part/_title/title}
+\include{component/_title/main}
 
 \end{document}
