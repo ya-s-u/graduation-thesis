@@ -7,16 +7,16 @@
 \usepackage{times}
 \usepackage{selectp}
 \usepackage{epsf}
-\usepackage{style/epsbox}
-\usepackage{style/mediabb}
-%\usepackage{style/boites_exemples}
-\usepackage{style/verbatimfiles}
+\usepackage{styles/epsbox}
+\usepackage{styles/mediabb}
+%\usepackage{styles/boites_exemples}
+\usepackage{styles/verbatimfiles}
 \usepackage{here}
 \usepackage{url}
 \usepackage{fancyhdr}
 \usepackage{fancyvrb}
-\usepackage{style/algorithm}
-\usepackage{style/algorithmic}
+\usepackage{styles/algorithm}
+\usepackage{styles/algorithmic}
 \usepackage{cite}
 \usepackage[dvipdfmx, usenames]{color}
 \usepackage{colortbl}
@@ -27,7 +27,7 @@
 \usepackage{amssymb}
 \usepackage{latexsym}
 
-\usepackage{style/thesis}
+\usepackage{styles/thesis}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % マクロ定義
@@ -92,36 +92,35 @@
 \cleardoublepage
 
 % 期間毎の特徴語抽出手法
-\include{part/03./chapter3}
+\include{components/03.Interface/main}
 \cleardoublepage
 
 % タイムスケールを考慮した時系列的話題追跡
-\include{part/04./chapter4}
+\include{components/04.LOD/main}
 \cleardoublepage
 
 % ツイートの探索的閲覧支援システムの実装
-\include{part/05./chapter5}
+\include{components/05.Recommendation/main}
 \cleardoublepage
 
 % 評価・考察
-\include{part/06.Evaluation/chapter6}
+\include{components/06.Evaluation/main}
 \cleardoublepage
 
 % まとめ
-\include{part/07.Conclusion/chapter7}
+\include{components/07.Conclusion/main}
 \cleardoublepage
 
 % 謝辞
-\include{part/08.Acknowledgement/acknowledgement}
+\include{components/08.Acknowledgement/main}
 \cleardoublepage
 
 % 参考文献
-\include{part/09.Bibliography/reference}
+\include{components/09.Bibliography/main}
 \cleardoublepage
 
 \appendix
-\include{part/A.IPSJrengou2014/chap}
-\include{part/B.IPSJ2015/chap}
+\include{components/10.Appendix/IPSJ/main}
 
 \cleardoublepage
 \include{components/_title/main}
