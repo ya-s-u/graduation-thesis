@@ -1,12 +1,17 @@
 machine:
+  timezone:
+    Asia/Tokyo
   services:
     - docker
+
 dependencies:
   override:
     - docker info
-    - docker build -t tex .
+    - docker build -t ogajun/latex .
+
 test:
   override:
-    - docker run -v $(pwd):/app --name tex tex latexmk
+    - cd ~/docker-latex
+    - ./build.sh example ./tex_src
   post:
-    - docker cp tex:/app/main.pdf $CIRCLE_ARTIFACTS/
+    - docker cp tex:/data/main.pdf $CIRCLE_ARTIFACTS/
