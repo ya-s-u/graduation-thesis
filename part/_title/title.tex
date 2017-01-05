@@ -1,0 +1,103 @@
+%!TEX root = ../../main.tex
+% タイトルページ
+%\documentclass[a4j,12pt]{jreport}
+%\usepackage{graphicx}
+%\usepackage{times}
+%\usepackage{selectp}
+%\usepackage{epsf}
+%\usepackage{epsbox}
+%\usepackage{graphicx}
+%\usepackage{verbatimfiles}
+%\usepackage{here}
+%%\usepackage{url}
+%\usepackage{fancyhdr}
+%\usepackage{algorithm}
+%\usepackage{cite}
+%\usepackage{ascmac}
+%\usepackage{amsmath}
+%\usepackage{amsthm}
+%\usepackage{amssymb}
+%\usepackage{latexsym}
+
+%\usepackage{thesis}
+%\input{mymacros}
+
+%\oddsidemargin=17mm
+%\evensidemargin=-4mm
+
+%\setlength{\textwidth}{40zw}
+%\begin{document}
+
+
+
+\thispagestyle{empty}
+\setcounter{page}{0}
+% タイトル
+\def \title{音楽未経験者でも即興合奏可能な\\身体動作入力に基づく演奏支援システム}
+% 著者
+\def \author{一ノ瀬~修吾}
+% 提出日
+\def \date{\today}
+% 指導教官名
+\def \teacher{白松~俊}
+% 指導教官の肩書き
+\def \teacherrank{准教授}
+% 所属
+\def \belong{名古屋工業大学\\工学部 情報工学科}
+% 入学年度
+\def \year{23}
+% 学籍番号
+\def \regnum{24115013}
+
+% ---
+
+\def\sizeLL#1{\Huge #1}
+
+\def\sizeL#1{\LARGE #1}
+
+\def\sizeM#1{\Large #1}
+
+\def\sizeS#1{\large #1}
+
+
+\def\REYrule{\hbox to 5cm{\leaders\hrule height 1pt\hfill}}
+\newbox\REYbox
+\def\announce#1{
+  \setbox\REYbox=\hbox{\REYrule\quad{\Large\bf #1}\quad\raise3pt\REYrule}%
+  \gdef\REYbigrule{\hbox to \wd\REYbox{\leaders\hrule height 1pt \hfill}}%
+  \centerline{\raise3pt\REYrule\vspace*{2mm}\quad{\LARGE #1}\quad\raise3pt\REYrule}}
+\def\endannounce{\par\centerline{\REYbigrule}}
+
+\begin{titlepage}
+ \begin{center}
+ %\renewcommand{\baselinestretch}{1.0}
+  \vspace*{5mm}
+  \sizeLL{卒業論文}\\
+  \vspace*{10mm}
+  \begin{announce}{（題~~目）}
+   \sizeL{\title}\\
+  \end{announce}
+  \vspace*{20mm}
+  \sizeM{指導教員~~~~~}\sizeL{\teacher}\sizeM{~~\teacherrank}\\
+  %\vspace*{40mm} % 題目が2行の場合
+ % \vspace*{30mm} % 題目が3行の場合
+ \vspace{10mm}
+  \sizeM{\belong}\\
+  \vspace*{10mm}
+  \sizeM{平成 \year 年 4 月 入学}\\
+  \vspace*{3mm}
+  \begin{table}[H]
+    \begin{center}
+     \begin{tabular}{cl}
+      \sizeM{（学籍番号）} & \sizeL{{\underline{~~ \regnum ~~}}} \\
+      \sizeM{（氏~名）} & \sizeL{\underline{~~ \author ~~}} \\
+     \end{tabular}
+    \end{center}
+   \end{table}
+  \vspace*{10mm}
+  % \sizeS{（提出日:~\today）}                % 日付
+  \sizeS{（提出日:\ ~平成28年2月8日）}                % 日付
+ \end{center}
+\end{titlepage}
+
+%\end{document}
