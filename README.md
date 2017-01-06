@@ -1,5 +1,7 @@
 # MissionForest: 組織内外における協働支援のためのタスク構造化システムの試作
 
+[![CircleCI](https://circleci.com/gh/ya-s-u/graduation-thesis.svg?style=svg)](https://circleci.com/gh/ya-s-u/graduation-thesis)
+
 Prototyping a Task Structuring System for Supporting Collaboration in Intra-organization and Inter-organization
 
 ## 概要
@@ -9,10 +11,10 @@ Prototyping a Task Structuring System for Supporting Collaboration in Intra-orga
 さらに，目標ツリーを直感的操作で作成・編集可能にする．
 これにより，組織内部の日常的な活動から組織外部との協働までをサポートする．
 
+## 著者
+名古屋工業大学情報工学科4年 後藤 誉昌
+
 ## PDF出力
 ```sh
 $ make export
 ```
-
-## 著者
-名古屋工業大学情報工学科4年 後藤 誉昌

@@ -1,0 +1,17 @@
+machine:
+  timezone:
+    Asia/Tokyo
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build -t ogajun/latex .
+
+test:
+  override:
+    - cd ~/docker-latex
+    - sudo ./build.sh main ./
+  post:
+    - docker cp ./data/main.pdf $CIRCLE_ARTIFACTS/
