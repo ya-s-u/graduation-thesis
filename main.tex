@@ -52,13 +52,11 @@
 
 \pagestyle{fancyplain}
 
-%\pagenumbering{roman}
-
-% タイトルページ
 \newlength{\oldtextwidth}
 \setlength{\oldtextwidth}{\textwidth}
 \setlength{\textwidth}{40zw}
 
+% タイトル
 \include{components/_title/main}
 \cleardoublepage
 
@@ -71,43 +69,41 @@
 
 %ここからページ数開始
 \pagenumbering{arabic}
+\cleardoublepage
 
 % アブストラクト
-\cleardoublepage
-%\pagenumbering{roman}
 \include{components/00.Abstract/main}
-% \include{part/00.Abstract/abstract-e}
 \cleardoublepage
 
 % 目次
 \include{components/_contents/main}
 \cleardoublepage
 
-% 序章
+% 第１章 序論
 \include{components/01.Introduction/main}
 \cleardoublepage
 
-% 関連研究
+% 第２章 関連研究
 \include{components/02.RelatedWorks/main}
 \cleardoublepage
 
-% 期間毎の特徴語抽出手法
+% 第３章 直感的にツリーを作成できるインターフェース
 \include{components/03.Interface/main}
 \cleardoublepage
 
-% タイムスケールを考慮した時系列的話題追跡
+% 第４章 LODでの公開機構
 \include{components/04.LOD/main}
 \cleardoublepage
 
-% ツイートの探索的閲覧支援システムの実装
+% 第５章 類似タスクの推薦機構
 \include{components/05.Recommendation/main}
 \cleardoublepage
 
-% 評価・考察
+% 第６章 性能評価・考察
 \include{components/06.Evaluation/main}
 \cleardoublepage
 
-% まとめ
+% 第７章 まとめ
 \include{components/07.Conclusion/main}
 \cleardoublepage
 
@@ -119,10 +115,12 @@
 \include{components/09.Bibliography/main}
 \cleardoublepage
 
+% 付録
 \appendix
 \include{components/10.Appendix/IPSJ/main}
-
 \cleardoublepage
+
+% タイトル
 \include{components/_title/main}
 
 \end{document}
