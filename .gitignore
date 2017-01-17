@@ -1,6 +1,10 @@
 ## Generated files:
 /main.pdf
 
+## Node.js
+node_modules/*
+*.log
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

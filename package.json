@@ -1,0 +1,25 @@
+{
+  "name": "graduation-thesis",
+  "version": "1.0.0",
+  "description": "Prototyping a Task Structuring System for Supporting Collaboration in Intra-organization and Inter-organization",
+  "main": "index.js",
+  "scripts": {
+    "export": "gulp export",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ya-s-u/graduation-thesis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ya-s-u/graduation-thesis/issues"
+  },
+  "homepage": "https://github.com/ya-s-u/graduation-thesis#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sketch": "^1.0.3"
+  }
+}
