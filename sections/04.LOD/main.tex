@@ -20,13 +20,18 @@
 そこで，タスクツリーからユーザが公開したいタスクのみを部分的に選択できるようなインターフェースも必要となる．
 このような公開箇所の選択機構についても，現在実装中である．
 
-\begin{figure}[t]
-	\begin{center}
-		\includegraphics[width=0.9\linewidth]{assets/img/permission_table.png}
-		\caption{アクセス権限}
-		\label{img:permission_table}
-	\end{center}
-\end{figure}
+\begin{table}[t]
+ \caption{アクセス権限}
+ \begin{center}
+	 \begin{tabular}{ | c || c | c | c | c | } \hline
+		  & 個人的思想 & 組織内限定 & 外部公開 & LOD \\ \hline \hline
+			Read & 作成者 & 組織内 & 誰でも & 誰でも \\ \hline
+			Write & 作成者 & \shortstack{ 作成者 \\ メンバー } & \shortstack{ 作成者 \\ メンバー } & \shortstack{ 作成者 \\ メンバー } \\ \hline
+			ライセンス & - & - & - & オープンライセンス \\ \hline
+	 \end{tabular}
+	 \label{tab:convert}
+ \end{center}
+\end{table}
 
 \section{実装手法}
 // TODO: 具体的な実装手法
