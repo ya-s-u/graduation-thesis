@@ -1,0 +1,198 @@
+% This is an environment for writing abstruct of thesis.
+% 修論と卒論のスタイルを統一  Sun Jan 18 2004 宇佐見庄五＠内匠研
+% 枠線など一部以外，全面改訂  Fri Jan 16 2004 宇佐見庄五＠内匠研
+% 情報工学科卒業研究用に改訂  Mon Jan 7 2008 中村＠伊藤研
+%
+% This is an environment for writing abstruct of master's thesis.
+% 11 Apr 88, last modified 2 Dec 88
+%            last modified by T. Kuroda, Feb. 7, 1996
+% fuckin' modified for ICS
+% by Kenichi Tsukamoto, Feb 1997.
+% $Id: shuronabst.sty,v 1.5 1997-02-10 14:28:04+09 tsuka Exp $
+
+\typeout{Document Style '卒業(修士)論文概要'. }
+
+
+\def\baselinestretch{1}
+
+% margin なるべくtexファイル内でaddtolengthで変更して下さい
+\oddsidemargin 11pt
+\evensidemargin -23pt
+
+% text size
+\textwidth 461pt
+\textheight 722pt
+\marginparwidth 70pt \marginparsep 11pt \marginparpush 5pt
+\topmargin -36pt  %変更すると枠ごと動く
+\headheight 14pt \headsep    20pt
+\columnsep 10pt \columnseprule 0pt %段組間距離，段組線太さ
+\raggedbottom
+
+\floatsep 6pt plus 1pt minus 2pt        %図表間距離
+\textfloatsep 10pt plus 1pt minus 3pt   %図表と本文の距離[tb]
+\intextsep 6pt plus 1pt minus 2pt       %図表と本文の距離[h]
+\dblfloatsep 6pt plus 1pt minus 2pt     %2段ぶち抜き図表の場合
+\dbltextfloatsep 10pt plus 1pt minus 3pt%2段ぶち抜き図表の場合
+
+\def\section{
+ \@startsection
+  {section}
+  {1}                           %見出し表示レベル
+  {0pt}                         %ページ左端から見出しまでの距離
+  {.75ex plus .25ex minus .25ex}%見出し上の空き（なし）
+  {.3ex plus .15ex minus .15ex} %見出し下の空き
+  {\large\bf}}                  %見出しの文字
+\def\subsection{
+ \@startsection
+  {subsection}{2}{0pt}{.5ex plus .25ex minus .25ex}
+  {.3ex plus .1ex minus .1ex}{\normalsize\bf}}
+\def\subsubsection{
+ \@startsection
+  {subsubsection}{3}{0pt}{.5ex plus .25ex minus .25ex}
+  {-1em}                        %改行せず
+  {\normalsize\bf}}
+%paragraph以下は使用しない前提で定義せず。
+\setcounter{secnumdepth}{3} %見出しを表示する最大レベル
+
+%以下はlist(itemize,enumerate,description)用の設定
+\leftmargini=1.5zw
+\leftmarginii=1.5zw
+\leftmarginiii=1.25zw
+\leftmargin=\leftmargini
+\labelsep=.5zw
+\labelwidth=\leftmargini
+\advance \labelwidth by -\labelsep
+
+\def\@listI{
+ \leftmargin=\leftmargini
+ \parsep=\z@
+ \topsep=2pt plus 2pt minus 1pt
+ \itemsep=0pt plus 2pt\relax}
+\let \@listi=\@listI
+\@listi
+
+\def\@listii{
+ \leftmargin=\leftmarginii
+ \labelwidth=\leftmarginii
+ \advance \labelwidth by -\labelsep
+ \topsep=1pt plus 1pt minus 0pt
+ \parsep=\z@
+ \itemsep=0pt plus 1pt\relax}
+
+\def\@listiii{
+ \leftmargin=\leftmarginiii
+ \labelwidth=\leftmarginiii
+ \advance \labelwidth by -\labelsep
+ \topsep=0pt plus 1pt minus 0pt
+ \parsep=\z@}
+
+\long\def\@makecaption#1#2{ %図と表のキャプション設定
+ \vskip 1pt                 %図とキャプションの距離
+ \setbox\@tempboxa\hbox{#1: #2}
+ \ifdim \wd\@tempboxa >\hsize
+  #1: #2\par
+ \else
+  \hbox to\hsize{\hfil\box\@tempboxa\hfil}
+ \fi
+ \vskip 2pt}                %キャプションと表の距離
+\def\fps@figure{bt}         %位置指定のない図はbかt
+\def\fps@table{bt}          %位置指定のない表はbかt
+
+\def\thebibliography#1{ %参考文献は小さめに
+ \subsection*{参考文献\@mkboth{参考文献}{参考文献}}
+ \small
+ \list{[\arabic{enumi}]}
+  {\settowidth{\labelwidth}{[#1]}
+   \leftmargin=\labelwidth
+   \advance \leftmargin by \labelsep
+   \usecounter{enumi}}
+ \def\newblock{\hskip .03em plus .1em minus .03em}
+ \sloppy
+ \clubpenalty=4000 \widowpenalty=4000
+ \sfcode`\.=1000\relax}
+\let\endthebibliography=\endlist
+
+\def\eqnarray{ %数式で&=&の左右の空を防ぐ
+ \stepcounter{equation}
+ \let\@currentlabel=\theequation
+ \global\@eqnswtrue
+ \global\@eqcnt\z@
+ \tabskip\@centering
+ \let\\=\@eqncr
+ $$\halign to \displaywidth\bgroup\@eqnsel\hskip\@centering
+ $\displaystyle\tabskip\z@{##}$&\global\@eqcnt\@ne
+ \hfil$\displaystyle{{}##{}}$\hfil
+ &\global\@eqcnt\tw@$\displaystyle\tabskip\z@{##}$\hfil
+ \tabskip\@centering&\llap{##}\tabskip\z@\cr}
+
+%ここから下がアブスト枠の設定
+%
+\def\種別#1{\def\@種別{#1}}         %卒業または修士
+\def\学籍番号#1{\def\@学籍番号{#1}} %\def\@学籍番号{}
+\def\氏名#1{\def\@氏名{#1}}         %\def\@氏名{}
+\def\英語氏名#1{\def\@英語氏名{#1}} %\def\@英語氏名{}
+\def\研究室#1{\def\@研究室{#1}}     %\def\@研究室{}
+\def\系#1{\def\@系{#1}}             %\def\@系{}
+\def\題目#1{\long\def\@題目{#1}}    %\def\@題目{}
+\def\年度#1{\def\@年度{#1}}         %\def\@年度{} %!= 年
+\newcount\@unt@ \newcount\@@unt@
+
+\def\stop論文概要{}
+\def\returnaddress{}
+
+\newif\if論文error \論文errorfalse
+\def\@タイトルチェック#1{%
+  \@for\p@r@m:=#1\do{\expandafter
+    \ifx\csname @\p@r@m\endcsname\relax
+    \typeout{「\p@r@m」が指定されていません}\論文errortrue\fi}
+  \if論文error
+  \errmessage{未定義のタイトル項目があります}\else\relax\fi}
+
+\long\def\論文概要{%
+  \@タイトルチェック{種別,学籍番号,氏名,研究室,題目,年度}
+  \newpage
+  \pagestyle{plain} \thispagestyle{firstpage}
+  \c@page\@ne \@@@論文概要 %\vspace*{0.5cm} texファイルで空ける様変更。
+  \interlinepenalty=200}
+\def\end論文概要{\stop論文概要\@@par\pagebreak\@@par}
+
+\def\@論文概要ヘッダ{\bf
+  平 成\ \@年度\ 年 度\hspace{3zw}\@種別\  研 究 概 要}
+
+\def\@論文概要{%
+  \vbox to \headheight{
+    \hbox to \textwidth{\hss
+      \def\arraystretch{1}
+      \begin{tabular}{|p{9cm}|p{3cm}|p{4cm}|}
+        \hline \multicolumn{3}{|c|}{\@論文概要ヘッダ} \\ \hline
+        &  \@研究室 研究室 & \hspace*{.3cm}\@ifundefined{@系}{---}{\@系 系} \\ \cline{2-3}
+        \hfil\raise 8pt \hbox{\smash{%
+            \begin{minipage}{8.5cm}\centering\@題目
+          \end{minipage}}} \hfil
+        & \multicolumn{1}{|l}{\hspace*{.3cm}No. \@学籍番号} &
+        \multicolumn{1}{l|}{\@氏名} \\ \hline
+        \multicolumn{3}{|c|}{\vrule height 10in width 0pt}
+        \\ \hline %枠線
+      \end{tabular}\hss}\vss}}
+
+\def\@@@論文概要{{%
+    \setbox0=\hbox to \textwidth{\hss
+      \global\@unt@=1\global\@@unt@=1
+      \@setsize\small{10pt}\ixpt\@ixpt}} \def\footnoterule{}}
+
+\def\@@論文概要{%
+  \dimen0 9.743in
+  \advance\dimen0\headheight
+  \advance\dimen0\headsep
+  \vbox to \headheight{\hbox to \textwidth{\hss
+      \begin{tabular}{@{\vrule}p{17.26cm}@{\vrule}} \hline \hfil
+        \@論文概要ヘッダ \hfil\\
+        \hline \hbox{\vrule width 0pt height \dimen0}\\ \hline
+      \end{tabular}\hss}\vss}}
+
+\def\ps@firstpage{\def\@oddhead{\@論文概要}\def\@oddfoot{}
+  \def\@evenhead{\@論文概要}\def\@evenfoot{}}
+\def\ps@plain{\def\@oddhead{\@@論文概要}\def\@oddfoot{}
+  \def\@evenhead{\@@論文概要}\def\@evenfoot{}}
+
+\endinput % thesis_abst.sty ends here.
