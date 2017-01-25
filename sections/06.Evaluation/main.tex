@@ -8,7 +8,7 @@
 \subsection{実験内容}
 サンプルとして\ref{img:experiment_question}に示すプロジェクトを提示し，ゴオルシェア及びミッションフォレスト両システムで作成してもった．
 実際に作成されたツリーを，\ref{img:experiment_goalshare}と\ref{img:experiment_missionforest}に示す．
-ウェブユーザビリティ評価スケール（WUS）に基づく評価項目\ref{table:experiment_question}について，どちらのシステムがよかったか評価してもらった．
+ウェブユーザビリティ評価スケール（WUS）に基づく評価項目\ref{table:experiment_question}について，どちらのシステムがよかったか，1がゴオルシェア，7がミッションフォレストとして1から7の７段階評価をしてもらった．
 
 \begin{figure}[t]
 	\begin{center}
@@ -38,35 +38,37 @@
  \caption{評価実験項目}
  \begin{center}
 	 \begin{tabular}{ | c | c | } \hline
-			１ & ミッションの作成はどちらが操作しやすかったですか \\ \hline
- 			２ & タスクの作成はどちらが操作しやすかったですか \\ \hline
- 			３ & 画面上のUI構成はどちらがわかりやすかったですか \\ \hline
- 			４ & どちらのツリー表示が見やすかったですか \\ \hline
- 			５ & 軽快な動きをするのはどちらでしたか \\ \hline
- 			６ & 今後どちらのシステムを使いたいですか \\ \hline
+		（１） & ミッションの作成はどちらが操作しやすかったですか \\ \hline
+ 		（２） & タスクの作成はどちらが操作しやすかったですか \\ \hline
+ 		（３） & 画面上のUI構成はどちらがわかりやすかったですか \\ \hline
+ 		（４） & どちらのツリー表示が見やすかったですか \\ \hline
+ 		（５） & 軽快な動きをするのはどちらでしたか \\ \hline
+ 		（６） & 今後どちらのシステムを使いたいですか \\ \hline
 	 \end{tabular}
 	 \label{table:experiment_question}
  \end{center}
 \end{table}
 
 \subsection{実験結果と考察}
-今回はサンプルとして，１０名の被験者に評価実験を行ってもらった．
-以下に各評価項目ごとの結果と考察を述べる．
+今回はサンプルとして，10名の被験者に評価実験を行った．
+\ref{table:experiment_result}にその解答結果を示し，それぞれの項目について信頼区間95\%で検定した結果を\ref{table:experiment_result}に示す．
 
-\subsubsection{（１）ミッションの作成はどちらが操作しやすかったですか}
-TODO: エラーバーグラフ
+\begin{table}[t]
+ \caption{評価実験結果}
+ \begin{center}
+	 \begin{tabular}{ | c || c | c | c | c | c | c | } \hline
+		  & （１） & （２） & （３） & （４） & （５） & （６） \\ \hline \hline
+			Aさん & 7 & 7 & 7 & 7 & 6 & 7 \\ \hline
+			Bさん & 7 & 7 & 6 & 5 & 6 & 6 \\ \hline
+	 \end{tabular}
+	 \label{table:experiment_result}
+ \end{center}
+\end{table}
 
-\subsubsection{（２）タスクの作成はどちらが操作しやすかったですか}
-TODO: エラーバーグラフ
-
-\subsubsection{（３）画面上のUI構成はどちらがわかりやすかったですか}
-TODO: エラーバーグラフ
-
-\subsubsection{（４）どちらのツリー表示が見やすかったですか}
-TODO: エラーバーグラフ
-
-\subsubsection{（５）軽快な動きをするのはどちらでしたか}
-TODO: エラーバーグラフ
-
-\subsubsection{（６）今後どちらのシステムを使いたいですか}
-TODO: エラーバーグラフ
+\begin{figure}[t]
+	\begin{center}
+		\includegraphics[width=0.9\linewidth]{assets/eps/experiment_result.eps}
+		\caption{評価実験結果プロット}
+		\label{graph:experiment_result}
+	\end{center}
+\end{figure}

@@ -1,0 +1,11 @@
+# X Y min max
+1 7 7 7
+2 7 7 7
+3 6.5 6 7
+4 6 5 7
+5 6 6 6
+6 6.5 6 7
+
+# gnuplot> set xrange [0:7]
+# gnuplot> set yrange [0:8]
+# gnuplot> plot "datas/interface_experiment.dat" with errorbars pt 6 ps 2 title "Result"
